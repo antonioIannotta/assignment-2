@@ -97,7 +97,7 @@ async function projectReport() {
 }
 
 async function project() {
-    let project = analyzeProject(/** */);
+    let project = await analyzeProject(/** */);
     console.log(project);
 }
 
