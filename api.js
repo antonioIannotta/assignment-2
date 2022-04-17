@@ -6,43 +6,69 @@
     Vengono definite più funzioni, asincrone, ciascuna delle quali risolve uno specifico task basandosi sui metodi definiti in precedenza
 */
 
+const { exec } = require('child_process');
 
 function getInterfaceReport(srcInterfacePath) {
     let promise = new Promise((resolve, reject) => {
-        //Qui va la chiamata al programma Java per recuperare info sull'interfaccia
-        resolve(/** elemento di ritorno */);
+        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
+            if (error) {
+                console.error(stderror);
+                return;
+            }
+            resolve(stdout);
+        });
     });
     return promise;
 }
 
 function getClassReport(srcClassPath) {
     let promise = new Promise((resolve, reject) => {
-        //Qui va la chiamata al programma Java per recuperare info sulla classe
-        resolve(/** elemento di ritorno */);
+        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
+            if (error) {
+                console.error(stderror);
+                return;
+            }
+            resolve(stdout);
+        });
     });
     return promise;
 }
 
 function getPackageReport(srcPackageFolderPath) {
     let promise = new Promise((resolve, reject) => {
-        //Qui va la chiamata al programma Java per recuperare info sul package
-        resolve(/** elemento di ritorno */);
+        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
+            if (error) {
+                console.error(stderror);
+                return;
+            }
+            resolve(stdout);
+        });
     });
     return promise;
 }
 
 function getProjectReport(srcProjectFolderPath) {
     let promise = new Promise((resolve, reject) => {
-        //Qui va la chiamata al programma Java per recuperare info sul Progetto
-        resolve(/** elemento di ritorno */);
+        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
+            if (error) {
+                console.error(error);
+                return;
+            }
+            resolve(stdout);
+        });
     });
     return promise;
 }
 
 function analyzeProject(srcProjectFolderPath, callback) {
     let promise = new Promise((resolve, reject) => {
-        //Qui va la chiamata al programma Java per recuperare info sull'analisi del progetto
-        resolve(/** elemento di ritorno */)
+        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
+            if (error) {
+                console.error(stderr);
+                return;
+            }
+            resolve(stdout);
+        });
     });
     return promise;
 }
@@ -71,7 +97,7 @@ async function projectReport() {
 }
 
 async function project() {
-    let project = await analyzeProject(/** */);
+    let project = analyzeProject(/** */);
     console.log(project);
 }
 
