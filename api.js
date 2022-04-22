@@ -12,7 +12,7 @@ function getInterfaceReport(srcInterfacePath) {
     let promise = new Promise((resolve, reject) => {
         exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
             if (error) {
-                console.error(stderror);
+                console.error(stderr);
                 return;
             }
             resolve(stdout);
@@ -25,7 +25,7 @@ function getClassReport(srcClassPath) {
     let promise = new Promise((resolve, reject) => {
         exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
             if (error) {
-                console.error(stderror);
+                console.error(stderr);
                 return;
             }
             resolve(stdout);
@@ -34,11 +34,12 @@ function getClassReport(srcClassPath) {
     return promise;
 }
 
+
 function getPackageReport(srcPackageFolderPath) {
     let promise = new Promise((resolve, reject) => {
         exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
             if (error) {
-                console.error(stderror);
+                console.error(stderr);
                 return;
             }
             resolve(stdout);
@@ -51,7 +52,7 @@ function getProjectReport(srcProjectFolderPath) {
     let promise = new Promise((resolve, reject) => {
         exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
             if (error) {
-                console.error(error);
+                console.error(stderr);
                 return;
             }
             resolve(stdout);
