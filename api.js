@@ -1,19 +1,10 @@
-/*
-    Lo script dichiara tutti i metodi definiti nella consegna dell'assignment.
-    Ciascun metodo effettua una chiamata al programma Java che utiliza JavaParser ed incapsula il risultato all'interno di una Promise
-    Ciascun metodo ritorna una Promise.
-    E' necessario collegare lato client dei pulsanti che consentano la richiesta dei diversi elementi di un progetto.
-    Vengono definite più funzioni, asincrone, ciascuna delle quali risolve uno specifico task basandosi sui metodi definiti in precedenza
-*/
-
 const { exec } = require('child_process');
 
-function getInterfaceReport(srcInterfacePath) {
+export function getInterfaceReport(srcInterfacePath) {
     let promise = new Promise((resolve, reject) => {
-        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
+        exec('', (error,stdout,stderr) => {
             if (error) {
-                console.error(stderr);
-                return;
+                reject(error);
             }
             resolve(stdout);
         });
@@ -21,52 +12,11 @@ function getInterfaceReport(srcInterfacePath) {
     return promise;
 }
 
-function getClassReport(srcClassPath) {
+export function getClassReport(srcClassPath) {
     let promise = new Promise((resolve, reject) => {
-        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
+        exec('',(error,stdout,stderr) => {
             if (error) {
-                console.error(stderr);
-                return;
-            }
-            resolve(stdout);
-        });
-    });
-    return promise;
-}
-
-
-function getPackageReport(srcPackageFolderPath) {
-    let promise = new Promise((resolve, reject) => {
-        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
-            if (error) {
-                console.error(stderr);
-                return;
-            }
-            resolve(stdout);
-        });
-    });
-    return promise;
-}
-
-function getProjectReport(srcProjectFolderPath) {
-    let promise = new Promise((resolve, reject) => {
-        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
-            if (error) {
-                console.error(stderr);
-                return;
-            }
-            resolve(stdout);
-        });
-    });
-    return promise;
-}
-
-function analyzeProject(srcProjectFolderPath, callback) {
-    let promise = new Promise((resolve, reject) => {
-        exec(/*qui va il path del programma Java che utilizza JavaParser */ (error,stdout,stderr) => {
-            if (error) {
-                console.error(stderr);
-                return;
+                reject(error);
             }
             resolve(stdout);
         });
@@ -75,30 +25,40 @@ function analyzeProject(srcProjectFolderPath, callback) {
 }
 
 
-console.log("Esecuzione inizia qui");
-
-async function interfaceReport() {
-  let interfaceReport = await getInterfaceReport(/** */);
-  console.log(interfaceReport);
+export function getPackageReport(srcPackageFolderPath) {
+    let promise = new Promise((resolve, reject) => {
+        exec('',(error,stdout,stderr) => {
+            if (error) {
+                reject(error);
+            }
+            resolve(stdout);
+        });
+    });
+    return promise;
 }
 
-async function classReport() {
-  let classReport = await getClassReport(/** */);
-  console.log(classReport);
+export function getProjectReport(srcProjectFolderPath) {
+    let promise = new Promise((resolve, reject) => {
+        exec('',(error,stdout,stderr) => {
+            if (error) {
+                reject(error);
+            }
+            resolve(stdout);
+        });
+    });
+    return promise;
 }
 
-async function packageReport() {
-  let packageReport = await getPackageReport(/** */);
-  console.log(packageReport);
+/*
+export function analyzeProject(srcProjectFolderPath, callback) {
+    let promise = new Promise((resolve, reject) => {
+        exec('',(error,stdout,stderr) => {
+            if (error) {
+                reject(error);
+            }
+            resolve(stdout);
+        });
+    });
+    return promise;
 }
-
-async function projectReport() {
-    let projectReport = await getProjectReport(/** */);
-    console.log(projectReport);
-}
-
-async function project() {
-    let project = await analyzeProject(/** */);
-    console.log(project);
-}
-
+*/
