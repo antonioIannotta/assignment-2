@@ -22,7 +22,9 @@ async function projectReport(srcProjectPath) {
 }
 
 async function analyzeProject(srcProjectPath) {
-    await api.analyzeProject_v_1(srcProjectPath, (promise) => {
-        promise.then((result) => document.getElementById("analyze").innerHTML(result));   
-    })
+    await api.analyzeProject_v_1(srcProjectPath, (res) => {
+        while (res != "") {
+            document.getElementById("analyze").innerHTML(res);
+        }   
+    });
 }
