@@ -1,4 +1,6 @@
-import * as api from './api';
+const api = require("./api");
+
+//import * as api from './api';
 
 
 async function classReport(srcClassPath) {
@@ -21,10 +23,3 @@ async function projectReport(srcProjectPath) {
     document.getElementById("project").innerHTML(res);
 }
 
-async function analyzeProject(srcProjectPath) {
-    await api.analyzeProject_v_1(srcProjectPath, (res) => {
-        while (res != "") {
-            document.getElementById("analyze").innerHTML(res);
-        }   
-    });
-}
