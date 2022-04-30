@@ -20,3 +20,8 @@ public class ProjectReport {
         }
     }
 }
+
+/**
+ * Ho immaginato un progetto java come una serie di directory,
+ * ogni directory è un package. 
+ */
