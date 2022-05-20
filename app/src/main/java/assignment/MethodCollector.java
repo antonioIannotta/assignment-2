@@ -1,9 +1,9 @@
 package assignment;
 
-import java.util.List;
-
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+
+import java.util.List;
 
 public class MethodCollector extends VoidVisitorAdapter<List<String>> {
     @Override

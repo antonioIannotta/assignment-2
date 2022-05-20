@@ -5,15 +5,14 @@ package assignment;
 
 public class App {
     public static void main(String[] args){
-        
-        String path = "";
-        ClassReport classReport = new ClassReport(path);
-        classReport.getReport();
-        InterfaceReport interfaceReport = new InterfaceReport(path);
-        interfaceReport.getReport();
-        PackageReport packageReport = new PackageReport(path);
-        packageReport.getReport();
-        ProjectReport projectReport = new ProjectReport(path);
-        projectReport.getReport();
+
+        //Vert.x implementation of assignment
+        //JavaParserVertxFrame frame = new JavaParserVertxFrame();
+
+        //RXJava implementation of assignment
+        JavaParserRxImpl javaParserRx = new JavaParserRxImpl();
+        JavaParserRxFrame frame = new JavaParserRxFrame(javaParserRx);
+
+        //javaParserRx.getClassReport("prova.txt");
     }
 }

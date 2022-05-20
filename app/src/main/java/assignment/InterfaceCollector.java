@@ -1,9 +1,9 @@
 package assignment;
 
-import java.util.List;
-
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+
+import java.util.List;
 
 public class InterfaceCollector extends VoidVisitorAdapter<List<String>> {
     @Override
